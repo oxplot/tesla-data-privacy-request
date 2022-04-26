@@ -1,0 +1,52 @@
+{
+  "category": "Vehicle Details",
+  "title": "Warranties",
+  "path_glob": "Vehicle Details/Warranties.csv",
+  "description": "List of vehicle warranties.",
+  "fields": {
+    "WARRANTY START DATE (UTC)": {
+      "description": "Date the warranty starts (in UTC)",
+      "type": "date",
+      "optional": false,
+      "go_format": "January 02 2006"
+    },
+    "WARRANTY END DATE (UTC)": {
+      "description": "Date the warranty ends (in UTC)",
+      "type": "date",
+      "optional": false,
+      "go_format": "January 02 2006"
+    },
+    "VIN": {
+      "description": "Vehicle Identification Number",
+      "type": "string",
+      "optional": false
+    },
+    "MODEL": {
+      "description": "Tesla vehicle model",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "MODEL S",
+        "MODEL 3",
+        "MODEL X",
+        "MODEL Y"
+      ]
+    },
+    "NAME": {
+      "description": "Warranty description",
+      "type": "string",
+      "optional": false
+    },
+    "TYPE": {
+      "description": "Warranty type",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "Battery Coverage",
+        "Driveunit Coverage",
+        "General Coverage",
+        "Roadside Coverage"
+      ]
+    }
+  }
+}

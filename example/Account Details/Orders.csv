@@ -1,0 +1,4 @@
+﻿REFERENCE NUMBER,RESERVACTION DATE (UTC),STORE NAME,STATUS,DELIVERY TYPE,ACTUAL DELIVERED DATE (UTC),PRODUCT FAMILY,VIN,MODEL,TRIM,PROOF OF DELIVERY SIGNER
+RNXXXXXXXXX,June 30 2019,Online Store,Cancelled,,,Vehicle,,MODEL 3,,
+RNXXXXXXXXX,October 26 2020,,Delivered,Pickup Service Center,September 30 2020,Vehicle,5YXXXXXXXXXXXXXXX,MODEL 3,Standard Range Plus,Xxxxxxx Xxxxxxxx
+RNXXXXXXXXX,,Apac-Au-Nsw-Sydney-Lower North Shore,Cancelled,Pickup Service Center,,Vehicle,,Model S,,

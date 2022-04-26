@@ -1,0 +1,77 @@
+{
+  "category": "Account Details",
+  "title": "Account Details",
+  "path_glob": "Account Details/Account Details.csv",
+  "description": "Customer account details",
+  "fields": {
+    "FIRST NAME": {
+      "description": "Customer's first name",
+      "type": "string",
+      "optional": false
+    },
+    "LAST NAME": {
+      "description": "Customer's last name",
+      "type": "string",
+      "optional": false
+    },
+    "CONTACT TYPE": {
+      "description": "Contact detail type",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "Billing",
+        "Billing Address Ota",
+        "Billing Address Pc",
+        "Deliver To",
+        "Delivery",
+        "Invoice To",
+        "Order",
+        "Ordered By",
+        "Owner Reg",
+        "Payer: Subscriptions",
+        "Payer: Upgrades",
+        "Shipping"
+      ]
+    },
+    "STREET 1": {
+      "description": "Address line 1",
+      "type": "string",
+      "optional": true
+    },
+    "STREET 2": {
+      "description": "Address line 2",
+      "type": "string",
+      "optional": true
+    },
+    "CITY": {
+      "description": "Address city",
+      "type": "string",
+      "optional": true
+    },
+    "STATE/PROVINCE": {
+      "description": "Address state/province",
+      "type": "string",
+      "optional": true
+    },
+    "POSTAL CODE": {
+      "description": "Address postal code",
+      "type": "string",
+      "optional": true
+    },
+    "COUNTRY": {
+      "description": "Address country",
+      "type": "string",
+      "optional": true
+    },
+    "EMAIL ADDRESS 1": {
+      "description": "Email address",
+      "type": "string",
+      "optional": true
+    },
+    "PHONE NUMBER 1": {
+      "description": "Phone number",
+      "type": "string",
+      "optional": true
+    }
+  }
+}

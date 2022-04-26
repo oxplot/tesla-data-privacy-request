@@ -1,0 +1,59 @@
+{
+  "category": "Vehicle Details",
+  "title": "Vehicle Details",
+  "path_glob": "Vehicle Details/Vehicle Details.csv",
+  "description": "List of vehicles owned by the customer.",
+  "fields": {
+    "VIN": {
+      "description": "Vehicle Identification Number",
+      "type": "string",
+      "optional": false
+    },
+    "YEAR": {
+      "description": "Vehicle year (usually of manufacture)",
+      "type": "date",
+      "optional": false,
+      "go_format": "2006"
+    },
+    "MODEL": {
+      "description": "Vehicle model",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "MODEL S",
+        "MODEL 3",
+        "MODEL X",
+        "MODEL Y"
+      ]
+    },
+    "TRIM": {
+      "description": "Vehicle trim/variant",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "Standard Range Plus"
+      ]
+    },
+    "COLOR": {
+      "description": "Vehicle color",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "Pearl White Multi-Coat"
+      ]
+    },
+    "TITLE STATUS": {
+      "description": "???",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "NEW"
+      ]
+    },
+    "LICENSE PLATE": {
+      "description": "Vehicle license plate",
+      "type": "string",
+      "optional": false
+    }
+  }
+}

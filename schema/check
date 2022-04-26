@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set -e -u -o pipefail
+
+# sanity checks of the schema
+
+find -name '*.json' | while read f; do
+
+  echo "checking $f ..." >&2
+
+  # Ensure valid and normalized JSON
+  jq . "$f" | diff -Nau "$f" -
+    
+  # Ensure required top level fields
+  if [ "$(jq ".category and .title and .description and .path_glob" "$f")" != true ]; then
+    echo "category,title,description,path_glob fields cannot be blank or missing" >&2
+    exit 1
+  fi
+
+  # Ensure at least one field
+  if ! [ "$(jq '.fields|length' "$f")" -gt 0 ]; then
+    echo "schema must define at least one field" >&2
+    exit 1
+  fi
+
+  # Ensure required field attributes and valid field type
+  if jq '.fields[]|select((.type | in({"number":1,"enum":1,"string":1,"date":1})) and .optional != null | not)' "$f" | grep . >&2; then
+    echo "optional,type attributes are required for all fields and type must be one of number,enum,string or date" >&2
+    exit 1
+  fi
+
+  # Ensure valid enum type
+  if jq '.fields[]|select(.type == "enum" and ((.enum | type) != "array" or (.enum | length) < 1))' "$f" | grep . >&2; then
+    echo "enum type fields must have enum attribute with at least one item" >&2
+    exit 1
+  fi
+  if jq '.fields[]|select(.type != "enum" and .enum)' "$f" | grep . >&2; then
+    echo "non-enum type fields must not have enum attribute" >&2
+    exit 1
+  fi
+
+  # Ensure valid date type
+  if jq '.fields[]|select(.type == "date" and (.go_format | not))' "$f" | grep . >&2; then
+    echo "date type fields must have go_format attribute" >&2
+    exit 1
+  fi
+
+done
+
+echo "all good :)" >&2

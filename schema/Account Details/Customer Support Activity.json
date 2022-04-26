@@ -1,0 +1,42 @@
+{
+  "category": "Account Details",
+  "title": "Customer Support Activity",
+  "path_glob": "Account Details/Customer Support Activity.csv",
+  "description": "Customer related support events.",
+  "fields": {
+    "NAME": {
+      "description": "Customer's full name",
+      "type": "string",
+      "optional": false
+    },
+    "ACTIVITY TYPE": {
+      "description": "Event type",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "Communication (Email/Sms/Call)",
+        "Test Drive",
+        "Test Drive Request"
+      ]
+    },
+    "ACTIVITY DATE (UTC)": {
+      "description": "Event date (in utc)",
+      "type": "date",
+      "optional": true,
+      "go_format": "January 02 2006"
+    },
+    "LOCATION": {
+      "description": "Event location",
+      "type": "string",
+      "optional": true
+    },
+    "EVENT TYPE": {
+      "description": "Event type",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "Event"
+      ]
+    }
+  }
+}

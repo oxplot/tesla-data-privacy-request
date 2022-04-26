@@ -1,0 +1,29 @@
+{
+  "category": "Account Details",
+  "title": "Documents",
+  "path_glob": "Account Details/Documents.csv",
+  "description": "List of documentations retained by Tesla corresponding to your Tesla Account.",
+  "fields": {
+    "DOCUMENTS": {
+      "description": "Document name",
+      "type": "string",
+      "optional": false
+    },
+    "DATE (UTC)": {
+      "description": "Date the document was provided/created (in utc)",
+      "type": "date",
+      "optional": false,
+      "go_format": "January 02 2006"
+    },
+    "TYPE": {
+      "description": "Document type",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "Order Agreement",
+        "Owner Driver License Back",
+        "Owner Driver License Front"
+      ]
+    }
+  }
+}

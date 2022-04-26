@@ -1,0 +1,84 @@
+{
+  "category": "Account Details",
+  "title": "Orders",
+  "path_glob": "Account Details/Orders.csv",
+  "description": "List of orders.",
+  "fields": {
+    "REFERENCE NUMBER": {
+      "description": "Tesla specific reference number",
+      "type": "string",
+      "optional": false
+    },
+    "RESERVACTION DATE (UTC)": {
+      "description": "Reservation date (in utc)",
+      "type": "date",
+      "optional": true,
+      "go_format": "January 02 2006"
+    },
+    "STORE NAME": {
+      "description": "Store name where order was made",
+      "type": "string",
+      "optional": true
+    },
+    "STATUS": {
+      "description": "Order status",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "Cancelled",
+        "Delivered"
+      ]
+    },
+    "DELIVERY TYPE": {
+      "description": "Order delivery type",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "Pickup Service Center"
+      ]
+    },
+    "ACTUAL DELIVERED DATE (UTC)": {
+      "description": "Date the vehicle was delivered/picked up",
+      "type": "date",
+      "optional": true,
+      "go_format": "January 02 2006"
+    },
+    "PRODUCT FAMILY": {
+      "description": "Product family",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "Vehicle"
+      ]
+    },
+    "VIN": {
+      "description": "Vehicle Identification Number",
+      "type": "string",
+      "optional": true
+    },
+    "MODEL": {
+      "description": "Vehicle model",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "MODEL S",
+        "MODEL 3",
+        "MODEL X",
+        "MODEL Y"
+      ]
+    },
+    "TRIM": {
+      "description": "Vehicle trim/variant",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "Standard Range Plus"
+      ]
+    },
+    "PROOF OF DELIVERY SIGNER": {
+      "description": "Name of the person who signed for delivery",
+      "type": "string",
+      "optional": true
+    }
+  }
+}

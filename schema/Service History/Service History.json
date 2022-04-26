@@ -1,0 +1,60 @@
+{
+  "category": "Service History",
+  "title": "Service History",
+  "path_glob": "Service History/Service History.csv",
+  "description": "List of service history records. Records prior to 2019 are not currently supported, but can be obtained by emailing privacy@tesla.com. Recent service visits can take up to 7 days to populate. Additionally, to protect the privacy of each customer, only service records from your period of ownership is made available.",
+  "fields": {
+    "SERVICE VISIT DATE (UTC)": {
+      "description": "Service visit date (in utc)",
+      "type": "date",
+      "optional": false,
+      "go_format": "January 02 2006"
+    },
+    "MODEL": {
+      "description": "Vehicle model",
+      "type": "enum",
+      "optional": false,
+      "enum": [
+        "MODEL S",
+        "MODEL 3",
+        "MODEL X",
+        "MODEL Y"
+      ]
+    },
+    "VIN": {
+      "description": "Vehicle Identification Number",
+      "type": "string",
+      "optional": false
+    },
+    "SERVICE CENTER": {
+      "description": "Service center name",
+      "type": "string",
+      "optional": false
+    },
+    "SERVICE LOCATION": {
+      "description": "Service location street address lines",
+      "type": "string",
+      "optional": false
+    },
+    "CITY": {
+      "description": "Service location city",
+      "type": "string",
+      "optional": false
+    },
+    "STATE/PROVINCE": {
+      "description": "Service location state/province",
+      "type": "string",
+      "optional": false
+    },
+    "POSTAL CODE": {
+      "description": "Service location postal code",
+      "type": "string",
+      "optional": false
+    },
+    "COUNTRY": {
+      "description": "Service location country",
+      "type": "string",
+      "optional": false
+    }
+  }
+}

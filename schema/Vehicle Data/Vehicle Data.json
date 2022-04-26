@@ -1,0 +1,2066 @@
+{
+  "category": "Vehicle Data",
+  "title": "Vehicle Data",
+  "path_glob": "Vehicle Data/*.csv",
+  "description": "Vehicle time series events.",
+  "fields": {
+    "VIN": {
+      "description": "Vehicle Identification Number",
+      "type": "string",
+      "optional": false
+    },
+    "DATE (UTC)": {
+      "description": "Data entry date (in utc)",
+      "type": "date",
+      "optional": false,
+      "go_format": "2006-01-02 15:04:05.999"
+    },
+    "ABS Brake Event": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "ABS_EVENT_NOT_ACTIVE, 0.0",
+        "ABS_EVENT_ACTIVE_REAR, 3.0"
+      ]
+    },
+    "Accelerator Pedal Position (%)": {
+      "description": "0-100 range",
+      "type": "number",
+      "optional": true
+    },
+    "Accelerator Pedal Position Maximum - Sensor A (%) (max since previous sample)": {
+      "description": "0-100 range",
+      "type": "number",
+      "optional": true
+    },
+    "Air Conditioning - Air Distribution Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "AUTO, 0.0",
+        "MANUAL_PANEL, 2.0",
+        "MANUAL_PANEL_FLOOR, 3.0",
+        "MANUAL_DEFROST_FLOOR, 5.0",
+        "MANUAL_DEFROST_PANEL, 6.0",
+        "MANUAL_DEFROST_PANEL_FLOOR, 7.0"
+      ]
+    },
+    "Air Conditioning - Cabin Air Recirculation Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "AUTO, 0.0",
+        "RECIRC, 1.0"
+      ]
+    },
+    "Air Conditioning - Cabin Blower Setting": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "1, 1.0",
+        "2, 2.0",
+        "3, 3.0",
+        "4, 4.0",
+        "5, 5.0",
+        "6, 6.0",
+        "7, 7.0",
+        "8, 8.0",
+        "9, 9.0",
+        "10, 10.0",
+        "AUTO, 11.0"
+      ]
+    },
+    "Air Conditioning - Cabin Defog Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "NONE, 0.0"
+      ]
+    },
+    "Air Conditioning - Left Side, Horizontal Position": {
+      "description": "0-100 range",
+      "type": "number",
+      "optional": true
+    },
+    "Air Conditioning - Left Side, Split/Focus": {
+      "description": "Air stream can be split into two stream by a pinch gesture",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SINGLE, 0.0",
+        "SPLIT, 1.0"
+      ]
+    },
+    "Air Conditioning - Left Side, Split Percentage": {
+      "description": "0-100 range - air stream can be split into two stream by a pinch gesture",
+      "type": "number",
+      "optional": true
+    },
+    "Air Conditioning - Left Side, Vertical Position": {
+      "description": "0-100 range",
+      "type": "number",
+      "optional": true
+    },
+    "Air Conditioning - Rear Cabin Blower Setting": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "AUTO, 0.0",
+        "OFF, 1.0",
+        "HIGH, 4.0"
+      ]
+    },
+    "Air Conditioning - Right Side, Horizontal Position": {
+      "description": "0-100 range",
+      "type": "number",
+      "optional": true
+    },
+    "Air Conditioning - Right Side, Split/Focus": {
+      "description": "Air stream can be split into two stream by a pinch gesture",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SINGLE, 0.0",
+        "SPLIT, 1.0"
+      ]
+    },
+    "Air Conditioning - Right Side, Split Percentage": {
+      "description": "0-100 range - air stream can be split into two stream by a pinch gesture",
+      "type": "number",
+      "optional": true
+    },
+    "Air Conditioning - Right Side, Vertical Position": {
+      "description": "0-100 range",
+      "type": "number",
+      "optional": true
+    },
+    "Air Conditioning - State": {
+      "description": "Pre-condition is a scheduling feature to make cabin comfortable. Overheat protection turns the AC on automatically if cabin temperature goes over a threshold.",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "OFF, 0.0",
+        "ON, 1.0",
+        "PRECONDITION, 2.0",
+        "OVERHEAT_PROTECT, 4.0"
+      ]
+    },
+    "Auto Lane Change State": {
+      "description": "Auto lane change becomes active when autopilot is engaged",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "ALC_UNAVAILABLE_NO_LANES, 1.0",
+        "ALC_UNAVAILABLE_EXITING_HIGHWAY, 4.0",
+        "ALC_UNAVAILABLE_VEHICLE_SPEED, 5.0",
+        "ALC_AVAILABLE_ONLY_L, 6.0",
+        "ALC_AVAILABLE_ONLY_R, 7.0",
+        "ALC_AVAILABLE_BOTH, 8.0",
+        "ALC_IN_PROGRESS_L, 9.0",
+        "ALC_IN_PROGRESS_R, 10.0",
+        "ALC_WAITING_FOR_SIDE_OBST_TO_PASS_L, 11.0",
+        "ALC_WAITING_FOR_SIDE_OBST_TO_PASS_R, 12.0",
+        "ALC_ABORT_LC_HEALTH_BAD, 18.0",
+        "ALC_ABORT_BLINKER_TURNED_OFF, 19.0",
+        "ALC_ABORT_OTHER_REASON, 20.0",
+        "ALC_SNA, 31.0"
+      ]
+    },
+    "Autopilot Trial Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "BASE, 0.0"
+      ]
+    },
+    "Autosteer Driver Hands On Detection": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LC_HANDS_ON_REQD_DETECTED, 1.0",
+        "LC_HANDS_ON_REQD_NOT_DETECTED, 2.0",
+        "LC_HANDS_ON_REQD_VISUAL, 3.0",
+        "LC_HANDS_ON_SNA, 15.0"
+      ]
+    },
+    "Autosteer State (Unavailable is recorded when Autosteer is not available, SNA is recorded when system state is not available)": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "DISABLED, 0.0",
+        "UNAVAILABLE, 1.0",
+        "AVAILABLE, 2.0",
+        "ACTIVE_NOMINAL, 3.0",
+        "ACTIVE_NAV, 5.0",
+        "ABORTING, 8.0",
+        "FAULT, 14.0"
+      ]
+    },
+    "Auto Summon Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "NONE, 0.0",
+        "SELF_PARK_FORWARD, 1.0",
+        "SELF_PARK_REVERSE, 2.0",
+        "ABORT, 3.0",
+        "PRIME, 4.0",
+        "SNA, 15.0"
+      ]
+    },
+    "Bluetooth Device 0 Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "3.00",
+        "4.00"
+      ]
+    },
+    "Bluetooth Device 1 Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "3.00",
+        "4.00"
+      ]
+    },
+    "Bluetooth Device 2 Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "3.00",
+        "4.00"
+      ]
+    },
+    "Bluetooth Device 3 Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "3.00",
+        "4.00"
+      ]
+    },
+    "Brake Master Cylinder Pressure (bar)": {
+      "description": "-1.5 to 65 range",
+      "type": "number",
+      "optional": true
+    },
+    "Brake Pedal Application": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "OFF, 0.0",
+        "ON, 1.0",
+        "INVALID, 2.0"
+      ]
+    },
+    "Brake Pedal Manual Application": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "Not_Applied, 1.0",
+        "Driver_applying_brakes, 2.0"
+      ]
+    },
+    "Cabin Preconditioning Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Charge Cable Connected": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "CABLE_NOT_PRESENT, 0.0",
+        "CABLE_PRESENT, 1.0"
+      ]
+    },
+    "Charge Cable Secured": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Charge Handle Communication Signal": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Charge Port Door Button Pressed": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Charge Port Door Lock Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "CLOSURE_UNLOCKED, 0.0",
+        "CLOSURE_LOCKED, 1.0"
+      ]
+    },
+    "Charge Port Door Request": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "REQUEST_NONE, 0.0",
+        "REQUEST_OPEN, 1.0"
+      ]
+    },
+    "Combined Charge System Charge Cable Button Pressed": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Cruise Control Set Speed (mph / kph)": {
+      "description": "0 is a valid value",
+      "type": "number",
+      "optional": true
+    },
+    "Cruise Control State": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "CRS_STATE_UNAVAILABLE, 0.0",
+        "CRS_STATE_STANDBY, 1.0",
+        "CRS_STATE_ENABLED, 2.0",
+        "CRS_STATE_STANDSTILL, 3.0",
+        "CRS_STATE_OVERRIDE, 4.0"
+      ]
+    },
+    "Daytime Running Light Status - Left": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LIGHT_OFF, 0.0",
+        "LIGHT_ON, 1.0",
+        "LIGHT_FAULT, 2.0"
+      ]
+    },
+    "Daytime Running Light Status - Right": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LIGHT_OFF, 0.0",
+        "LIGHT_ON, 1.0",
+        "LIGHT_FAULT, 2.0"
+      ]
+    },
+    "Door External Release - Left side, Front": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Door External Release - Left side, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Door External Release - Right Side, Front": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Door External Release - Right Side, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Door Internal Release - Left side, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Door Internal Release - Right Side, Front": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Door Internal Release - Right Side, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Drive Authentication from Centre Console Reader": {
+      "description": "Placing the key card on the center console activates driving",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Driver Seat Track Position Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SNA, 3.0"
+      ]
+    },
+    "Fast Charge Adapter Latch Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Front Left Seat - Backrest Position": {
+      "description": "0-100 range",
+      "type": "number",
+      "optional": true
+    },
+    "Front Left Seatbelt Buckle Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_SNA, 0.0",
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Front Left Seat - Lift Position": {
+      "description": "0-5 range",
+      "type": "number",
+      "optional": true
+    },
+    "Front Left Seat - Tilt Position": {
+      "description": "0-6 range",
+      "type": "number",
+      "optional": true
+    },
+    "Front Left Seat - Track Position": {
+      "description": "90-360 range",
+      "type": "number",
+      "optional": true
+    },
+    "Front Passenger Present": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Front Right Seat - Backrest Position": {
+      "description": "0-100 range",
+      "type": "number",
+      "optional": true
+    },
+    "Front Right Seat - Lift Position": {
+      "description": "0-5 range",
+      "type": "number",
+      "optional": true
+    },
+    "Front Right Seat - Tilt Position": {
+      "description": "0-6 range",
+      "type": "number",
+      "optional": true
+    },
+    "Front Right Seat - Track Position": {
+      "description": "90-360 range",
+      "type": "number",
+      "optional": true
+    },
+    "Front Trunk Access Post Usage": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Front Trunk Release - Interior Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Gear Selection": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "DI_GEAR_P, 1.0",
+        "DI_GEAR_R, 2.0",
+        "DI_GEAR_N, 3.0",
+        "DI_GEAR_D, 4.0",
+        "DI_GEAR_SNA, 7.0"
+      ]
+    },
+    "Gear Selector Stalk Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "IDLE, 0.0",
+        "UP_1, 1.0",
+        "UP_2, 2.0",
+        "DOWN_1, 3.0",
+        "DOWN_2, 4.0",
+        "INIT, 5.0"
+      ]
+    },
+    "Hazard Warning Switch Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Horn Switch Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Identity of the Active Key Device": {
+      "description": "can be 0.00",
+      "type": "number",
+      "optional": true
+    },
+    "ID of NFC card at Centre Console Reader": {
+      "description": "can be 0.00",
+      "type": "number",
+      "optional": true
+    },
+    "ID of NFC card at Left Reader": {
+      "description": "can be 0.00",
+      "type": "number",
+      "optional": true
+    },
+    "ID of NFC card at Right Reader": {
+      "description": "can be 0.00",
+      "type": "number",
+      "optional": true
+    },
+    "Lateral Acceleration (m/s^2)": {
+      "description": "-10 to 10 range",
+      "type": "number",
+      "optional": true
+    },
+    "Left Brake Light": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LIGHT_OFF, 0.0",
+        "LIGHT_ON, 1.0"
+      ]
+    },
+    "Left Front Window Auto-Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Front Window, Auto-Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Front Window Auto-Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Front Window, Auto-Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Front Window Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Front Window, Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Front Window Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Front Window, Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Rear Window Auto-Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Rear Window, Auto-Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Rear Window Auto-Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Rear Window, Auto-Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Rear Window Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Rear Window, Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Rear Window Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Rear Window, Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Left Steering Wheel Switch  - Pressed": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0"
+      ]
+    },
+    "Left Steering Wheel Switch  - Scroll": {
+      "description": "-4 to 4 range",
+      "type": "number",
+      "optional": true
+    },
+    "Left Steering Wheel Switch  - Tilt Left": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0"
+      ]
+    },
+    "Left Steering Wheel Switch - Tilt Right": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0"
+      ]
+    },
+    "Lock Request Type": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LOCK_REQUEST_NONE, 0.0",
+        "LOCK_REQUEST_PASSIVE_PARKBUTTON_UNLOCK, 2.0",
+        "LOCK_REQUEST_PASSIVE_INTERNAL_HANDLE_UNLOCK, 3.0",
+        "LOCK_REQUEST_PASSIVE_DRIVE_AWAY_LOCK, 4.0",
+        "LOCK_REQUEST_PASSIVE_BLE_EXTERIOR_CHARGEHANDLEBUTTON_UNLOCK, 6.0",
+        "LOCK_REQUEST_PASSIVE_BLE_EXTERIOR_HANDLE_UNLOCK, 7.0",
+        "LOCK_REQUEST_PASSIVE_BLE_INTERIOR_HANDLE_UNLOCK, 8.0",
+        "LOCK_REQUEST_PASSIVE_BLE_LOCK, 9.0",
+        "LOCK_REQUEST_ACTIVE_UI_BUTTON_UNLOCK, 11.0",
+        "LOCK_REQUEST_ACTIVE_UI_BUTTON_LOCK, 12.0",
+        "LOCK_REQUEST_ACTIVE_REMOTE_LOCK, 14.0",
+        "LOCK_REQUEST_ACTIVE_NFC_UNLOCK, 15.0",
+        "LOCK_REQUEST_ACTIVE_NFC_LOCK, 16.0",
+        "LOCK_REQUEST_ACTIVE_BLE_UNLOCK, 17.0",
+        "LOCK_REQUEST_ACTIVE_BLE_LOCK, 18.0"
+      ]
+    },
+    "Lock/Unlock Authentication from Pillar Reader": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Longitudinal Acceleration (m/s^2)": {
+      "description": "-10 to 10 range",
+      "type": "number",
+      "optional": true
+    },
+    "Mobile App - Remote Closure Request": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "UI_REMOTE_CLOSURE_REQUEST_IDLE, 0.0"
+      ]
+    },
+    "Mobile App - Remote Start Request": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "UI_REMOTE_START_REQUEST_IDLE, 0.0",
+        "UI_REMOTE_START_REQUEST_START, 1.0"
+      ]
+    },
+    "Mobile App Request - Left Front Window": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Mobile App Request - Left Rear Window": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Mobile App Request - Right Front Window": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Mobile App Request - Right Rear Window": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Mobile App Window Request Type": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "WINDOW_REQUEST_IDLE, 0.0"
+      ]
+    },
+    "Multiple NFC Cards Detected at Centre Console": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Multiple NFC Cards Detected at Left Pillar": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Multiple NFC Cards Detected at Right Pillar": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Navigating to Supercharger": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Navigation Route Active": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Odometer (Kilometers)": {
+      "description": "",
+      "type": "number",
+      "optional": true
+    },
+    "Overhead Map Light - Front Left Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Overhead Map Light - Front Right Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Overhead Map Light - Rear Left Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Overhead Map Light - Rear Right Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Passenger Seat Track Position Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SNA, 3.0"
+      ]
+    },
+    "PIN Tto Drive accepted": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "1.00"
+      ]
+    },
+    "Primary Steering Angle Sensor (degrees) (Positive indicates right turn)": {
+      "description": "-400 to 400 range",
+      "type": "number",
+      "optional": true
+    },
+    "Primary Steering Torque Sensor (Nm) (Positive indicates right turn)": {
+      "description": "-10 to 10 range",
+      "type": "number",
+      "optional": true
+    },
+    "Rear Air Conditioning Control Switch Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Request Automatic Parking": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "NONE, 0.0",
+        "SEARCH, 9.0",
+        "BEGIN_PARKING, 12.0"
+      ]
+    },
+    "Requested Charge Current (Amps)": {
+      "description": "",
+      "type": "number",
+      "optional": true
+    },
+    "Right Brake Light": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LIGHT_OFF, 0.0",
+        "LIGHT_ON, 1.0"
+      ]
+    },
+    "Right Front Window Auto-Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Front Window, Auto-Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Front Window Auto-Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Front Window, Auto-Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Front Window Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Front Window, Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Front Window Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Front Window, Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Rear Window Auto-Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Rear Window, Auto-Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Rear Window Auto-Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Rear Window, Auto-Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Rear Window Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Rear Window, Down Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Rear Window Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Rear Window, Up Switch": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Right Steering Wheel Switch - Pressed": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0"
+      ]
+    },
+    "Right Steering Wheel Switch - Scroll": {
+      "description": "-8 to 8 range",
+      "type": "number",
+      "optional": true
+    },
+    "Right Steering Wheel Switch - Tilt Left": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0"
+      ]
+    },
+    "Right Steering Wheel Switch - Tilt Right": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0"
+      ]
+    },
+    "Seatbelt Buckle Status - Centre, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_SNA, 0.0",
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Seatbelt Buckle Status - Left Side, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_SNA, 0.0",
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Seatbelt Buckle Status - Right, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_SNA, 0.0",
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Seatbelt Buckle Status - Right Side, Front": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_SNA, 0.0",
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Seating - Left Front Temperature": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LO, 15.0",
+        "15.50",
+        "16.00",
+        "16.50",
+        "17.00",
+        "17.50",
+        "18.00",
+        "18.50",
+        "19.00",
+        "19.50",
+        "20.00",
+        "20.50",
+        "21.00",
+        "21.50",
+        "22.00",
+        "22.50",
+        "23.00",
+        "23.50",
+        "24.00",
+        "24.50",
+        "25.00",
+        "25.50",
+        "26.00",
+        "26.50",
+        "27.00",
+        "HI, 28.0"
+      ]
+    },
+    "Seating - Right Front Temperature": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LO, 15.0",
+        "15.50",
+        "16.00",
+        "16.50",
+        "17.00",
+        "17.50",
+        "18.00",
+        "18.50",
+        "19.00",
+        "19.50",
+        "20.00",
+        "20.50",
+        "21.00",
+        "21.50",
+        "22.00",
+        "22.50",
+        "23.00",
+        "23.50",
+        "24.00",
+        "24.50",
+        "25.00",
+        "25.50",
+        "26.00",
+        "26.50",
+        "27.00",
+        "HI, 28.0"
+      ]
+    },
+    "Seat Occupancy Status - Left Side, Front": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Seat Occupancy Status - Left Side, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Seat Occupancy Status - Rear, Centre": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Seat Occupancy Status - Right Side, Rear": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Seat Profile Recall - Front Right": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "RECALL_SNA, 0.0",
+        "RECALL_IN_PROGRESS, 1.0",
+        "RECALL_COMPLETE, 2.0",
+        "RECALL_INTERRUPTED, 3.0"
+      ]
+    },
+    "Seat Profile Recall - Left Side, Front": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "RECALL_SNA, 0.0",
+        "RECALL_IN_PROGRESS, 1.0",
+        "RECALL_COMPLETE, 2.0",
+        "RECALL_INTERRUPTED, 3.0"
+      ]
+    },
+    "Steering Column Profile Recall": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "RECALL_SNA, 0.0",
+        "RECALL_IN_PROGRESS, 1.0",
+        "RECALL_COMPLETE, 2.0"
+      ]
+    },
+    "Summon Request Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SUMMON_REQUEST_IDLE, 0.0",
+        "SUMMON_REQUEST_STOP, 4.0"
+      ]
+    },
+    "Summon State": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "Switch Request - Front Left Seat Backrest Back": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Backrest Forward": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Lift Down": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Switch Lift Up": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Switch Lumbar Down": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Switch Lumbar In": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Switch Lumbar Out": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Switch Lumbar Up": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Switch Tilt Down": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Switch Tilt Up": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Track Back": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Left Seat Track Forward": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Backrest Back": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Backrest Forward": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Lift Down": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Switch Lift Up": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Switch Lumbar Down": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Switch Lumbar In": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Switch Lumbar Out": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Switch Lumbar Up": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Switch Tilt Down": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Switch Tilt Up": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Track Back": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Switch Request - Front Right Seat Track Forward": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SWITCH_OFF, 1.0",
+        "SWITCH_ON, 2.0",
+        "SWITCH_FAULT, 3.0"
+      ]
+    },
+    "Trunk Movement Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "CLOSURE_REQUEST_NONE, 0.0"
+      ]
+    },
+    "Turn indicators Left On/Off": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LIGHT_OFF, 0.0",
+        "LIGHT_ON, 1.0"
+      ]
+    },
+    "Turn indicators Right On/Off": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LIGHT_OFF, 0.0",
+        "LIGHT_ON, 1.0"
+      ]
+    },
+    "Turn Indicator Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "IDLE, 0.0",
+        "UP_0_5, 1.0",
+        "UP_1, 2.0",
+        "UP_1_5, 3.0",
+        "UP_2, 4.0",
+        "DOWN_0_5, 5.0",
+        "DOWN_1, 6.0",
+        "DOWN_1_5, 7.0",
+        "DOWN_2, 8.0"
+      ]
+    },
+    "UI Request - close Charge Port Door": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Request - Enable Charging": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Request - Factory Reset": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "NONE_SNA, 0.0"
+      ]
+    },
+    "UI Request - Follow Navigate on Autopilot Route": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "NAV_ROUTE_OFF, 0.0",
+        "NAV_ROUTE_ON, 1.0"
+      ]
+    },
+    "UI Request - Front Trunk Open": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Request - Open Charger Port Door": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Request - Park Brake": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "PARK_BRAKE_REQUEST_IDLE, 0.0"
+      ]
+    },
+    "UI Request - Track Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "TRACK_MODE_REQUEST_OFF, 2.0"
+      ]
+    },
+    "UI Request - Trunk Open/Close": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Request - Vehicle Lock/Unlock": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "UI_LOCK_REQUEST_IDLE, 0.0",
+        "UI_LOCK_REQUEST_LOCK, 1.0",
+        "UI_LOCK_REQUEST_UNLOCK, 2.0",
+        "UI_LOCK_REQUEST_REMOTE_LOCK, 4.0"
+      ]
+    },
+    "UI Request - Wiper Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "WIPER_MODE_NORMAL, 2.0",
+        "WIPER_MODE_PARK, 3.0"
+      ]
+    },
+    "UI Setting - Acceleration Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "CHILL, 0.0"
+      ]
+    },
+    "UI Setting - Automatic Emergency Braking": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "AEB_ON, 1.0"
+      ]
+    },
+    "UI Setting - Automatic High Beam": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "AHLB_OFF, 0.0",
+        "AHLB_ON, 1.0"
+      ]
+    },
+    "UI Setting - Automatic High/Low Beams Enabled": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Setting - Automatic Lane Change": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "ON, 1.0"
+      ]
+    },
+    "UI Setting - Automatic Mirror Fold/Unfold": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Setting - Autosteer": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LATERAL_CONTROL_ON, 1.0"
+      ]
+    },
+    "UI Setting - Disable Air Conditioning": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "AUTO, 0.0",
+        "OFF, 1.0"
+      ]
+    },
+    "UI Setting - Door Child Locking": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Setting - Forward Collision Warning": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "FCW_ON, 1.0"
+      ]
+    },
+    "UI Setting - Forward Collision Warning Sensitivity": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "AEB_SENSITIVITY_AVERAGE, 1.0",
+        "AEB_SENSITIVITY_LATE, 2.0"
+      ]
+    },
+    "UI Setting - Headlamps": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "LIGHT_SWITCH_AUTO, 0.0",
+        "LIGHT_SWITCH_ON, 1.0",
+        "LIGHT_SWITCH_PARKING, 2.0",
+        "LIGHT_SWITCH_OFF, 3.0",
+        "LIGHT_SWITCH_SNA, 4.0"
+      ]
+    },
+    "UI Setting - Headlamps After Exit": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Setting - Lane Change Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "SPEED_BASED_ULC_MILD, 1.0",
+        "SPEED_BASED_ULC_MAD_MAX, 3.0"
+      ]
+    },
+    "UI Setting - Lane Departure Warning": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "NO_HAPTIC, 0.0"
+      ]
+    },
+    "UI Setting - Mirror Fold ": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "MIRROR_FOLD_REQUEST_IDLE, 0.0"
+      ]
+    },
+    "UI Setting - Navigate on Autopilot": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "DOM_OFF, 0.0",
+        "DOM_ON, 1.0"
+      ]
+    },
+    "UI Setting - PIN to Drive": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Setting - Steering Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "STEERING_TUNE_STANDARD, 1.0"
+      ]
+    },
+    "UI Setting - Steering Sensitivity": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "STEERING_TUNE_RWD_COMFORT, 3.0",
+        "STEERING_TUNE_RWD_STANDARD, 4.0"
+      ]
+    },
+    "UI Setting - Stopping Mode ": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "HOLD, 2.0"
+      ]
+    },
+    "UI Setting - Unlock On Park": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Setting - Vehicle Alarm": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Setting - Walk Away Door Locking": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "0.00",
+        "1.00"
+      ]
+    },
+    "UI Setting - Winch Mode": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "WINCH_MODE_IDLE, 0.0"
+      ]
+    },
+    "Vehicle Alarm Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "ALARM_STATUS_DISARMED, 0.0",
+        "ALARM_STATUS_ARMED, 1.0",
+        "ALARM_STATUS_PARTIAL_ARMED, 2.0"
+      ]
+    },
+    "Vehicle Authentication Status": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "AUTHENTICATION_NONE, 0.0",
+        "AUTHENTICATION_AUTHENTICATED_FOR_UNLOCK, 1.0",
+        "AUTHENTICATION_AUTHENTICATED_FOR_DRIVE, 2.0"
+      ]
+    },
+    "Vehicle Speed (kph) (Positive is forward direction)": {
+      "description": "0\"SNA, 615.27\" value indicates SNA",
+      "type": "number",
+      "optional": true
+    },
+    "Vehicle Yaw Rate (Positive indicates left turn)": {
+      "description": "",
+      "type": "number",
+      "optional": true
+    },
+    "Wiper Speed": {
+      "description": "",
+      "type": "enum",
+      "optional": true,
+      "enum": [
+        "WIPER_REQUEST_OFF, 1.0",
+        "WIPER_REQUEST_AUTO, 2.0"
+      ]
+    }
+  }
+}
