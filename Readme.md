@@ -37,7 +37,9 @@ following before consuming the schema:
 
 [`example`](example) directory contains the data I received for my
 vehicle from which the `schema` is derived. I have annonymized the
-content and changed some around to preserve privacy.
+content and changed some around to preserve privacy. I have also trimmed
+the vehicle data down to less than 1% of what was provided. Some days
+had a log event every ten or so millisecond for the entire day!
 
 The dates in the [`example/Vehicle Data`](<example/Vehicle Data>)
 directory correspond to longer road trips I've been on since I bought
